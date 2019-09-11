@@ -6,5 +6,8 @@ def home(request):
     return render(request, 'pizza/home.html')
 
 def order(request):
-    form = PizzaForm()
-    return render(request, 'pizza/order.html', {'pizzaform': form})
+    if request.method == 'POST':
+        filled_form = PizzaForm(request.POST)
+    else:
+        form = PizzaForm()
+        return render(request, 'pizza/order.html', {'pizzaform': form})
