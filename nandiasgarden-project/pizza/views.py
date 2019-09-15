@@ -29,3 +29,10 @@ def pizzas(self):
     formset = PizzaFormSet()
     if request.method == 'POST':
         filled_formset = PizzaFormSet(request.POST)
+        if filled_formset.is_valid():
+            for form in filled_formset:
+                print(form.cleaned_data['topping1'])
+            note = 'Pizza have been ordered!'
+        else:
+            note = 'Order was not created. Please try again.'
+        return render(request, 'pizza/pizzas.html', {'note': note})
