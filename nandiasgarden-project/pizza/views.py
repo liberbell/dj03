@@ -50,4 +50,4 @@ def edit_order(request, pk):
         if filled_form.is_valid():
             filled_form.save()
             form = filled_form
-    return render(request, 'pizza/edit_order.html', {'formset': formset})
+    return render(request, 'pizza/edit_order.html', {'pizzaform': form, 'pizza':pizza})
