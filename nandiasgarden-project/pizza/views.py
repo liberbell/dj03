@@ -44,9 +44,9 @@ def pizzas(request):
 
 def edit_order(request, pk):
     pizza = Pizza.objects.get(pk=pk)
-    form = PizzaForm(isinstance=pizza)
+    form = PizzaForm(instance=pizza)
     if request.method == 'POST':
-        filled_form = PizzaForm(request.POST, isinstance=pizza)
+        filled_form = PizzaForm(request.POST, instance=pizza)
         if filled_form.is_valid():
             filled_form.save()
             form = filled_form
