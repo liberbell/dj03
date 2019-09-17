@@ -20,7 +20,7 @@ def order(request):
             new_form = PizzaForm()
             return render(request, 'pizza/order.html', {'created_pizza_pk': created_pizza_pk, 'pizzaform': new_form, 'note': note, 'multiple_form': multiple_form})
         else:
-            created_pizza = None
+            created_pizza_pk = None
             note = 'Pizza order has failded. Try again.'
         return render(request, 'pizza/order.html', {'created_pizza_pk': created_pizza_pk, 'pizzaform': filled_form, 'note': note, 'multiple_form': multiple_form})
     else:
