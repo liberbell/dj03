@@ -7,6 +7,7 @@
 
 <form action="{% url 'order' %}" method="post">
   {% csrf_token %}
+  {{ pizzaform.topping1.error }}
   {{ pizzaform.topping1.label_tag }}
   {{ pizzaform.topping1 }}
   <!-- <label for="topping1">Topping 1: </label>
