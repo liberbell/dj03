@@ -7,8 +7,8 @@
 
 <form action="{% url 'order' %}" method="post">
   {% csrf_token %}
-  <<table>
-    {{ pizzaform.as_table }}  
+  <table>
+    {{ pizzaform.as_table }}
   </table>
 
   <!-- <label for="topping1">Topping 1: </label>
