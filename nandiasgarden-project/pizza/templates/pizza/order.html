@@ -23,6 +23,9 @@
       {% csrf_token %}
 
       {% for field in pizzaform %}
+      {{ field.errors }}
+      {{ field.label_tag }}
+      {% render_field field class="form-control" %}
       {% endfor %}
       <!-- {{ pizzaform }} -->
 
