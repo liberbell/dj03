@@ -12,6 +12,9 @@
   </head>
   <body>
     {% load widget_tweaks %}
+    <div class="container">
+
+
     <h1>Order a Pizza</h1>
 
     <h2>{{ note }}</h2>
@@ -26,7 +29,7 @@
       <div class="form-group">
         {{ field.errors }}
         {{ field.label_tag }}
-        {% render_field field class="form-control" %}        
+        {% render_field field class="form-control" %}
       </div>
 
       {% endfor %}
@@ -62,6 +65,7 @@
       {{ multiple_form }}
       <input type="submit" value="Get Pizzas">
     </form>
+    </div>
 
 
     <!-- Optional JavaScript -->
